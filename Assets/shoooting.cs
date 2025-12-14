@@ -1,10 +1,15 @@
+
 using UnityEngine;
 
 public class shoooting : MonoBehaviour
 {
     private Camera mainCam;
     private Vector3 mousePos; 
-    private bool canFier;
+    private bool canFier = true;
+    public GameObject  bullet; 
+    public Transform bulletTransform;
+    private float timer; 
+    public float delay;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,6 +24,20 @@ public class shoooting : MonoBehaviour
         float rotZ =  Mathf.Atan2(Rotation.y, Rotation.x)*Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0,0,rotZ);
 
-        //if
+        if (!canFier)
+        {
+            timer+= time.deltaTime;
+            if (timer > delay)
+            {
+                canFier = true;
+                timer = 0f; 
+            }
+        }
+
+        if (Input.GetMouseButton(0)&& canFier)
+        {
+            canFier = false;
+            
+        }
     }
 }
