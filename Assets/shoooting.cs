@@ -1,4 +1,4 @@
-
+using Unity.Mathematics;
 using UnityEngine;
 
 public class shoooting : MonoBehaviour
@@ -26,7 +26,7 @@ public class shoooting : MonoBehaviour
 
         if (!canFier)
         {
-            timer+= time.deltaTime;
+            timer+= Time.deltaTime;
             if (timer > delay)
             {
                 canFier = true;
@@ -37,7 +37,7 @@ public class shoooting : MonoBehaviour
         if (Input.GetMouseButton(0)&& canFier)
         {
             canFier = false;
-            
+            Instantiate(bullet, bulletTransform.position, quaternion.identity);
         }
     }
 }
