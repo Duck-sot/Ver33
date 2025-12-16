@@ -17,7 +17,7 @@ public class SnipeB : MonoBehaviour
         Vector3 rotation = transform.position - mousePos; 
         rb.linearVelocity = new Vector2(direction.x, direction.y).normalized * force; 
         float rot = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg; 
-        transform.rotation = Quaternion.Euler(0, 0, rot +90);
+        transform.rotation = Quaternion.Euler(0, 0, rot );
     }
 
     // Update is called once per frame
@@ -27,7 +27,7 @@ public class SnipeB : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         print("här");
-        if(collision.collider.tag == "ground")
+        if (collision.collider.tag == "ground" || collision.collider.tag == "Player")
         {
             Destroy(gameObject);
             print("destroying");

@@ -5,6 +5,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private bool grounded = true; 
     Rigidbody2D rb;
+    private int hp = 100; 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

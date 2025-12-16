@@ -939,7 +939,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24e063f2915628b089d85d59b384cd2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 8181789694002716607, guid: 265ff52bbb32860ec8508fa2a565017e, type: 3}
+  BulletS: {fileID: 112632804331204031, guid: 25fda9f0c7cf4234e9c8dab6e02c237d, type: 3}
   bulletTransform: {fileID: 118093466}
   delay: 0.5
 --- !u!1 &2143944018

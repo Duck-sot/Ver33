@@ -9,8 +9,8 @@ public class shoooting : MonoBehaviour
     public GameObject  BulletS; 
     public Transform bulletTransform;
     private float timer; 
-    public float delay;
-    
+    private float delay = 0.3;
+    private int weponeDex = 1; 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -39,6 +39,33 @@ public class shoooting : MonoBehaviour
         {
             canFier = false;
             Instantiate(BulletS, bulletTransform.position, quaternion.identity);
+        }
+    }
+    public void WeponeSelect()
+    {
+        if (Input.GetKey(KeyCode))
+        {
+            weponeDex = 1;
+            delay = 0.3f; 
+            canFier = true;
+        }
+        else if (Input.GetKey(KeyCode))
+        {
+            weponeDex = 2;
+            delay = 1.5f; 
+            canFier = true;
+        }
+        else if (Input.GetKey(KeyCode))
+        {
+            weponeDex = 3;
+            delay = 1.5f; 
+            canFier = true;
+        }
+        else if (Input.GetKey(KeyCode))
+        {
+            weponeDex = 4;
+            delay = 1.5f; 
+            canFier = true;
         }
     }
 }
