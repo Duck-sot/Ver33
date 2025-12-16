@@ -1,11 +1,12 @@
 using UnityEngine;
 
-public class BulletScript : MonoBehaviour
+public class SnipeB : MonoBehaviour
 {
  private Vector3 mousePos;
     private Camera mainCam; 
     private Rigidbody2D rb;
-    public float force; 
+    private float force = 60f; 
+    private int dmg = 70;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

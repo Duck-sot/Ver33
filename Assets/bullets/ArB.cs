@@ -1,11 +1,12 @@
 using UnityEngine;
 
-public class BulletScript : MonoBehaviour
+public class ArB : MonoBehaviour
 {
  private Vector3 mousePos;
     private Camera mainCam; 
     private Rigidbody2D rb;
-    public float force; 
+    private float force = 40f; 
+    private int dmg = 8; 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -26,7 +27,7 @@ public class BulletScript : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         print("här");
-        if(collision.collider.tag == "ground")
+        if(collision.collider.tag == "ground" || collision.collider.tag == "Player")
         {
             Destroy(gameObject);
             print("destroying");

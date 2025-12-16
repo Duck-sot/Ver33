@@ -6,10 +6,11 @@ public class shoooting : MonoBehaviour
     private Camera mainCam;
     private Vector3 mousePos; 
     private bool canFier = true;
-    public GameObject  bullet; 
+    public GameObject  BulletS; 
     public Transform bulletTransform;
     private float timer; 
     public float delay;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -37,7 +38,7 @@ public class shoooting : MonoBehaviour
         if (Input.GetMouseButton(0)&& canFier)
         {
             canFier = false;
-            Instantiate(bullet, bulletTransform.position, quaternion.identity);
+            Instantiate(BulletS, bulletTransform.position, quaternion.identity);
         }
     }
 }
